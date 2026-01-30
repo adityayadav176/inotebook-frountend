@@ -4,8 +4,8 @@ import { useState, setNotes } from "react";
 const NoteState = (props) =>{
     const notes = [
   {
-    "_id": "697cbd81f59e5a5b0ae76664",
-    "user": "697b2db9d73bc0e90fd8e925",
+    "_id": "697cbd81f59e5a5bfdsfsf0ae76664",
+    "user": "697b2db9d73bc0e9dsds0fd8e925",
     "title": "instagram",
     "description": "instagram is dangeros for children",
     "tag": "personal",
@@ -13,8 +13,8 @@ const NoteState = (props) =>{
     "__v": 0
   },
   {
-    "_id": "697cbd81f59e5a5b0ae76666",
-    "user": "697b2db9d73bc0e90fd8e925",
+    "_id": "697cbd81f59e5a5ffdsdfdsffffdfdb0ae76666",
+    "user": "697b2db9d73bc0fdfdsdfe90fd8e925",
     "title": "instagram",
     "description": "instagram is dangeros for children",
     "tag": "personal",
@@ -22,8 +22,8 @@ const NoteState = (props) =>{
     "__v": 0
   },
    {
-    "_id": "697cbd81f59e5a5b0ae76664",
-    "user": "697b2db9d73bc0e90fd8e925",
+    "_id": "697cbd81f59e5a5ffdsfdfdb0ae76664",
+    "user": "697b2db9d73bcfdfdsffd0e90fd8e925",
     "title": "instagram",
     "description": "instagram is dangeros for children",
     "tag": "personal",
@@ -31,8 +31,8 @@ const NoteState = (props) =>{
     "__v": 0
   },
   {
-    "_id": "697cbd81f59e5a5b0ae76666",
-    "user": "697b2db9d73bc0e90fd8e925",
+    "_id": "697cbd81f59e5afdfsdf5b0ae76666",
+    "user": "697b2db9d73bcfdffsdd0e90fd8e925",
     "title": "instagram",
     "description": "instagram is dangeros for children",
     "tag": "personal",
@@ -40,8 +40,8 @@ const NoteState = (props) =>{
     "__v": 0
   },
    {
-    "_id": "697cbd81f59e5a5b0ae76664",
-    "user": "697b2db9d73bc0e90fd8e925",
+    "_id": "697cbd81f59e5ffsdfdfa5b0ae76664",
+    "user": "697b2db9d73bcfsdfdfd0e90fd8e925",
     "title": "instagram",
     "description": "instagram is dangeros for children",
     "tag": "personal",
@@ -49,8 +49,8 @@ const NoteState = (props) =>{
     "__v": 0
   },
   {
-    "_id": "697cbd81f59e5a5b0ae76666",
-    "user": "697b2db9d73bc0e90fd8e925",
+    "_id": "697cbd81f59e5ffdsfdfda5b0ae76666",
+    "user": "697b2db9d73bffsdfdfc0e90fd8e925",
     "title": "instagram",
     "description": "instagram is dangeros for children",
     "tag": "personal",
@@ -58,8 +58,8 @@ const NoteState = (props) =>{
     "__v": 0
   },
    {
-    "_id": "697cbd81f59e5a5b0ae76664",
-    "user": "697b2db9d73bc0e90fd8e925",
+    "_id": "697cbd81f59e5vffdfa5b0ae76664",
+    "user": "697b2db9d73bfdfdfsdfc0e90fd8e925",
     "title": "instagram",
     "description": "instagram is dangeros for children",
     "tag": "personal",
@@ -67,8 +67,8 @@ const NoteState = (props) =>{
     "__v": 0
   },
   {
-    "_id": "697cbd81f59e5a5b0ae76666",
-    "user": "697b2db9d73bc0e90fd8e925",
+    "_id": "697cbd81fcdffdf59e5a5bghfgh0ae76666",
+    "user": "697b2db9d73bc0ffddfsdfe90fd8e925",
     "title": "instagram",
     "description": "instagram is dangeros for children",
     "tag": "personal",
