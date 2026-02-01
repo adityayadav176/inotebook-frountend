@@ -53,7 +53,7 @@ const NoteState = (props) => {
     }
     //EDIT NOTE
     const editNote = async (id, title, description, tag) => {
-        // API Call 
+      
         const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
             method: "POST",
             headers: {
