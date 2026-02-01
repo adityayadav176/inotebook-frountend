@@ -12,10 +12,7 @@ const Notes = () => {
   const ref = useRef(null)
    const [note, setNote] = useState({etitle:"", eDescription:"", etag:""})
 
-  const updateNote = (currentNote) => {
-    ref.current.click();
-    setNote({etitle: currentNote.title, eDescription: currentNote.description, etag: currentNote.tag})
-  }
+ 
 
   const handleClick = (e) => {
     e.preventDefault();
