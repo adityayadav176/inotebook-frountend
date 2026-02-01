@@ -1,110 +1,83 @@
 import NoteContext from "./noteContext";
-import { useState, setNotes } from "react";
+import { useState } from "react";
 
 const NoteState = (props) => {
-    const notesIntial = [
-        {
-            "_id": "697cbd81f59e5a5bfdsfsf0ae76664",
-            "user": "697b2db9d73bc0e9dsds0fd8e925",
-            "title": "instagram",
-            "description": "instagram is dangeros for children",
-            "tag": "personal",
-            "date": "2026-01-30T14:17:37.310Z",
-            "__v": 0
-        },
-        {
-            "_id": "697cbd81f59e5a5ffdsdfdsffffdfdb0ae76666",
-            "user": "697b2db9d73bc0fdfdsdfe90fd8e925",
-            "title": "instagram",
-            "description": "instagram is dangeros for children",
-            "tag": "personal",
-            "date": "2026-01-30T14:17:37.520Z",
-            "__v": 0
-        },
-        {
-            "_id": "697cbd81f59e5a5ffdsfdfdb0ae76664",
-            "user": "697b2db9d73bcfdfdsffd0e90fd8e925",
-            "title": "instagram",
-            "description": "instagram is dangeros for children",
-            "tag": "personal",
-            "date": "2026-01-30T14:17:37.310Z",
-            "__v": 0
-        },
-        {
-            "_id": "697cbd81f59e5afdfsdf5b0ae76666",
-            "user": "697b2db9d73bcfdffsdd0e90fd8e925",
-            "title": "instagram",
-            "description": "instagram is dangeros for children",
-            "tag": "personal",
-            "date": "2026-01-30T14:17:37.520Z",
-            "__v": 0
-        },
-        {
-            "_id": "697cbd81f59e5ffsdfdfa5b0ae76664",
-            "user": "697b2db9d73bcfsdfdfd0e90fd8e925",
-            "title": "instagram",
-            "description": "instagram is dangeros for children",
-            "tag": "personal",
-            "date": "2026-01-30T14:17:37.310Z",
-            "__v": 0
-        },
-        {
-            "_id": "697cbd81f59e5ffdsfdfda5b0ae76666",
-            "user": "697b2db9d73bffsdfdfc0e90fd8e925",
-            "title": "instagram",
-            "description": "instagram is dangeros for children",
-            "tag": "personal",
-            "date": "2026-01-30T14:17:37.520Z",
-            "__v": 0
-        },
-        {
-            "_id": "697cbd81f59e5vffdfa5b0ae76664",
-            "user": "697b2db9d73bfdfdfsdfc0e90fd8e925",
-            "title": "instagram",
-            "description": "instagram is dangeros for children",
-            "tag": "personal",
-            "date": "2026-01-30T14:17:37.310Z",
-            "__v": 0
-        },
-        {
-            "_id": "697cbd81fcdffdf59e5a5bghfgh0ae76666",
-            "user": "697b2db9d73bc0ffddfsdfe90fd8e925",
-            "title": "instagram",
-            "description": "instagram is dangeros for children",
-            "tag": "personal",
-            "date": "2026-01-30T14:17:37.520Z",
-            "__v": 0
-        }
-    ]
-    const [notes, setNotes] = useState(notesIntial)
+    const host = "http://localhost:5000"
+    const notesInitial = []
+    const [notes, setNotes] = useState(notesInitial)
+        
+  //GET ALL NOTES
+    const getNotes = async () => {
+            //API CALL 
+            const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+            method: "GET",
+            headers: {
+                'Content-type': 'application/json',
+                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjk3YjJkYjlkNzNiYzBlOTBmZDhlOTI1In0sImlhdCI6MTc2OTY4MDM0M30.Z3HdkYgzM3GpcZ7R4PfZvyijoaFocvc_xhwXQLLuPKc'
+            },
+        });
+        const json = await  response.json()
+        console.log(json)
+        setNotes(json)
+    }
+
 
     //ADD A NOTE
-    const addNote = (title, description, tag) => {
-        // TODO API CALL
-        notes = {
-            "_id": "697cbd81fcdffdf59e5a5bghfgh0aeasd76666",
-            "user": "697b2db9d73bc0ffddfsdfe90fd8e925",
-            "title": "instagram [added]",
-            "description": "instagram is dangeros for children [ADDED] ",
-            "tag": "personal",
-            "date": "2026-01-30T14:17:37.520Z",
-            "__v": 0
-        }
-        setNotes(notes.push(notes))
+    const addNote = async (title, description, tag) => {    
+        // API CALL
+            const response = await fetch(`${host}/api/notes/addnote`, {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json',
+                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjk3YjJkYjlkNzNiYzBlOTBmZDhlOTI1In0sImlhdCI6MTc2OTY4MDM0M30.Z3HdkYgzM3GpcZ7R4PfZvyijoaFocvc_xhwXQLLuPKc'
+            },
+            body: JSON.stringify({title, description, tag})
+        });
+     
+         const note = await response.json()
+        setNotes(notes.concat(note))
     }
     //DELETE A NOTE
-    const deleteNote = () => {
-
+    const deleteNote = async(id) => {
+        // API CALL
+         const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-type': 'application/json',
+                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjk3YjJkYjlkNzNiYzBlOTBmZDhlOTI1In0sImlhdCI6MTc2OTY4MDM0M30.Z3HdkYgzM3GpcZ7R4PfZvyijoaFocvc_xhwXQLLuPKc'
+            }
+        });
+        const json = response.json()
+        const newNotes = notes.filter((note) => { return note._id !== id })
+        setNotes(newNotes);
     }
     //EDIT NOTE
-    const editNote = () => {
+    const editNote = async (id, title, description, tag) => {
+        // API Call 
+        const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json',
+                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjk3YjJkYjlkNzNiYzBlOTBmZDhlOTI1In0sImlhdCI6MTc2OTY4MDM0M30.Z3HdkYgzM3GpcZ7R4PfZvyijoaFocvc_xhwXQLLuPKc'
+            },
+            body: JSON.stringify({title, description, tag})
+        });
+        const json = response.json();
 
+        // logic to edit in client
+        for (let index = 0; index < notes.length; index++) {
+            const element = notes[index];
+            if (element._id === id) {
+                element.title = title;
+                element.description = description;
+                element.tag = tag;
+            }
+        }
     }
     return (
-        <NoteContext.Provider value={{ notes, setNotes, addNote, deleteNote, editNote }}>
+        <NoteContext.Provider value={{ notes, setNotes, addNote, deleteNote, editNote, getNotes }}>
             {props.children}
         </NoteContext.Provider>
     )
 }
-
 export default NoteState;
