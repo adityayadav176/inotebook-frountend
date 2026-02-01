@@ -5,7 +5,7 @@ import noteContext from '../context/notes/noteContext';
 const NotesAdd = () => {
     const context = useContext(noteContext);
     const { addNote } = context;
-    const [note, setNote] = useState({title:"", Description:"", tag:"default"})
+    const [note, setNote] = useState({title:"", Description:"", tag:""})
 
     const handleClick = (e) =>{
       addNote(note.title, note.Description, note.tag);
