@@ -33,7 +33,8 @@ const Signup = (props) => {
   }
 
   return (
-    <div>
+    <div className='mt-3'>
+      <h1>Create a account to use to iNotebook</h1>
       <form onSubmit={handleSubmit}  autoComplete="new-password">
           <div className="mb-3">
           <label htmlFor="name" className="form-label">Name</label>
