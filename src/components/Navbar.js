@@ -20,6 +20,10 @@ function Navbar() {
                                 <Link className={`nav-link ${location.pathname==="/about"?"active": ""}`} to="/About">About</Link>
                             </li>
                         </ul>
+                        <form className='d-flex'>
+                            <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
+                            <Link className="btn btn-primary mx-1" to="/signup" role="button">Signup</Link>
+                        </form>
                     </div>
                 </div>
             </nav>
